@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carwashsystem.RotationController">
+   <children>
+      <AnchorPane prefHeight="125.0" prefWidth="815.0" style="-fx-background-color: #0081FF;" />
+      <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="#0081ff" height="60.0" layoutX="573.0" layoutY="95.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="60.0" />
+      <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="#0081ff" height="60.0" layoutX="168.0" layoutY="95.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="60.0" />
+      <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="#0081ff" height="60.0" layoutX="370.0" layoutY="95.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="60.0" />
+      <Pane fx:id="menu1" layoutX="138.0" layoutY="205.0" opacity="0.0" prefHeight="137.0" prefWidth="120.0" style="-fx-background-color: #0055A8; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,        1.5); -fx-background-radius: 5;">
+         <children>
+            <MaterialDesignIconView fill="WHITE" glyphName="CAR" layoutX="27.0" layoutY="91.0" size="70.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="menu2" layoutX="340.0" layoutY="205.0" opacity="0.0" prefHeight="137.0" prefWidth="120.0" style="-fx-background-color: #0055A8; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,        1.5); -fx-background-radius: 5;">
+         <children>
+            <MaterialDesignIconView fill="WHITE" glyphName="CAR" layoutX="27.0" layoutY="91.0" size="70.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="menu3" layoutX="543.0" layoutY="205.0" opacity="0.0" prefHeight="137.0" prefWidth="120.0" style="-fx-background-color: #0055A8; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,        1.5); -fx-background-radius: 5;">
+         <children>
+            <MaterialDesignIconView fill="WHITE" glyphName="CAR" layoutX="27.0" layoutY="91.0" size="70.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

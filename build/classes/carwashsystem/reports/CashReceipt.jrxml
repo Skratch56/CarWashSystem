@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="80c7f8cc-24ff-4d61-9238-e9cccf7a5fc2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="36"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="CashRecNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     cashreceipt.`CashReceiptNo` AS CashReceiptNo,
+     cashreceipt.`AmountReceived` AS AmountReceived,
+     cashreceipt.`BookingNo` AS BookingNo,
+     cashreceipt.`EmployeeNo` AS EmployeeID,
+     employee.`employee_id` AS EmployeeID,
+     employee.`firstname` AS Firstname,
+     employee.`surname` AS Surname,
+     employee.`empType` AS EmpType,
+     vehicle.`vehicle_reg_no` AS Vehicle_reg_no,
+     tblcustomer.`customer_id` AS CustomerID,
+     tblcustomer.`firstname` AS CustFirstname,
+     tblcustomer.`surname` AS CustSurname,
+     booking.`booking_no` AS BookingNo,
+     booking.`booking_date` AS BookingDate,
+     booking.`total_amount` AS TotalAmount,
+     tblcustomer.`cellphone_number` AS Cellphone
+FROM
+     `booking` booking INNER JOIN `employee` employee ON booking.`employee_id` = employee.`employee_id`
+     INNER JOIN `vehicle` vehicle ON booking.`vehicle_reg_no` = vehicle.`vehicle_reg_no`
+     INNER JOIN `tblcustomer` tblcustomer ON booking.`customer_id` = tblcustomer.`customer_id`
+     INNER JOIN `cashreceipt` cashreceipt ON booking.`booking_no` = cashreceipt.`BookingNo`
+WHERE cashreceipt.`CashReceiptNo`=$P{CashRecNo}]]>
+	</queryString>
+	<field name="CashReceiptNo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AmountReceived" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BookingNo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EmployeeID" class="java.lang.Integer"/>
+	<field name="Firstname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Surname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EmpType" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Vehicle_reg_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CustomerID" class="java.lang.Integer"/>
+	<field name="BookingDate" class="java.lang.String"/>
+	<field name="TotalAmount" class="java.lang.String"/>
+	<field name="Cellphone" class="java.lang.String"/>
+	<field name="CustFirstname" class="java.lang.String"/>
+	<field name="CustSurname" class="java.lang.String"/>
+	<group name="CashReceiptNo">
+		<groupExpression><![CDATA[$F{CashReceiptNo}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="476" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="140" y="0" width="310" height="62" uuid="824677ca-7972-44b8-b298-4bfffa3db54c"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Cash Receipt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="223" y="62" width="116" height="22" uuid="01e6ceb0-5e8a-4884-962f-51739931cd0c"/>
+				<textElement>
+					<font fontName="Arial" size="14" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Time To Shine]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="172" width="110" height="15" forecolor="#736343" uuid="bdb22eae-8afb-436e-8b2f-75c5f32586af"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[AmountReceived]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="290" y="172" width="121" height="15" uuid="42489937-9b72-4f39-ab7f-401c2f736a55"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AmountReceived}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="155" y="201" width="110" height="15" forecolor="#736343" uuid="de0445a3-c88f-4753-83a8-5c8e055aee55"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[BookingNo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="231" width="110" height="15" forecolor="#736343" uuid="42dafdec-1926-45cd-ac6c-f7ff59f084e1"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[EmployeeID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="157" y="260" width="110" height="15" forecolor="#736343" uuid="ea32242c-be35-4696-9c93-228a4deee4e4"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Firstname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="287" width="110" height="15" forecolor="#736343" uuid="87dac99b-6b2e-43e2-b0f7-e6cfdb801343"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Surname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="157" y="313" width="110" height="15" forecolor="#736343" uuid="b74df27d-96a3-42e0-bdda-f87a11f8014a"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[EmpType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="342" width="110" height="15" forecolor="#736343" uuid="75f842d9-a6c8-4042-9d7c-f7790755d3d8"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Vehicle_reg_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="373" width="110" height="15" forecolor="#736343" uuid="ff8e5342-7f9f-4641-9308-ed4972a4b1fa"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[CustomerID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="397" width="110" height="15" forecolor="#736343" uuid="eac562c1-48d6-48cc-815b-7e871b9e3d61"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[BookingDate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="426" width="110" height="15" forecolor="#736343" uuid="e83c345b-a44c-4bc2-a70d-ee055e9fab8e"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[TotalAmount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="155" y="454" width="112" height="15" forecolor="#736343" uuid="2e2bace7-4a8c-4b70-aab9-6621516a44c3"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Cellphone]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="278" y="201" width="121" height="15" uuid="9efc5d93-6a49-498d-846e-c36579edf361"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BookingNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="278" y="231" width="121" height="15" uuid="8ba367d5-d417-47fb-9b7b-73e25d95eb04"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EmployeeID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="278" y="260" width="121" height="15" uuid="dd034e6d-8073-4dc1-834d-55e44f3ccef5"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Firstname}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="279" y="287" width="121" height="15" uuid="94c5933c-b6cd-459d-af7c-57e9be1b241b"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Surname}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="279" y="313" width="121" height="15" uuid="074df7a6-499a-4283-89b6-bbc61aa15be4"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EmpType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="278" y="342" width="121" height="15" uuid="700abf58-b41c-4a0b-b462-24c988f1e963"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Vehicle_reg_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="278" y="372" width="121" height="15" uuid="7b40c8d5-a8b6-4913-8e13-39184a418625"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustomerID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="278" y="397" width="121" height="15" uuid="a87e9f6a-57d5-4003-b22c-9061b0194490"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BookingDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="290" y="426" width="172" height="15" uuid="0393eef9-bcf2-490c-a864-3a89c1158f3f"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TotalAmount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="279" y="454" width="121" height="15" uuid="62ac69fc-25b7-430b-bb1d-13f69741ce15"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cellphone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="186" y="84" width="93" height="15" uuid="8d644d35-0320-4805-8593-c09ea8592722"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustFirstname}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="290" y="84" width="92" height="15" uuid="05b4bb46-e1f1-49ef-af4f-debde4257c1b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CustSurname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="169" y="99" width="230" height="22" uuid="4f80b6d2-5651-494d-8b42-37c2a7ea07b3"/>
+				<textElement>
+					<font fontName="Arial" size="18" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Thank you for your business]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="1" y="132" width="36" height="24" backcolor="#736343" uuid="23e86b8c-7f56-4fb2-96fb-9b10aef2b2c7"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement style="SubTitle" x="48" y="132" width="413" height="24" forecolor="#736343" uuid="a08518cb-fe25-40cc-af01-a209770c1445"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CashReceiptNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title" x="278" y="171" width="12" height="16" uuid="45a899f4-a9a9-42e4-a7d0-60691195ac88"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[R]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="278" y="425" width="12" height="16" uuid="1056020e-5eeb-4f49-8c9d-d1556c64e411"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[R]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="9" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="3ca95c4b-6c5e-4635-9af6-e9ff96e056b8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="1" y="17" width="555" height="15" uuid="6bf6d746-88ee-4228-a972-23ac2a403472"/>
+			</frame>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="fd2cf014-52ad-45f4-a136-a2b48140d243"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="1aa6f057-a2cf-4653-8e98-cac520fc9b9c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="4587aa01-b90f-4a0d-a7ec-2cd6cf1ded81"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="2647dc47-7fbd-4a05-9fca-30b46f76db71"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="frmReports" nodeOrientation="LEFT_TO_RIGHT" prefHeight="803.0" prefWidth="1362.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carwashsystem.reports.ReportController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="224.0" layoutY="47.0" text="Report Management" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" layoutX="993.0" layoutY="14.0" prefHeight="30.0" prefWidth="355.0" spacing="10.0">
+               <children>
+                  <JFXButton onAction="#onMinimize" prefHeight="26.0" prefWidth="22.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/minus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#onClose" prefHeight="27.0" prefWidth="22.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane layoutX="71.0" layoutY="44.0" prefHeight="110.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="93.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/advreporticon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Pane>
+      <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+      <JFXButton layoutX="213.0" layoutY="252.0" onAction="#onPrintCustomers" prefHeight="104.0" prefWidth="243.0" ripplerFill="#4799cd" style="-fx-background-color: #4799cd;" text="Print Customers" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="563.0" layoutY="252.0" onAction="#onPrintEmployees" prefHeight="104.0" prefWidth="243.0" ripplerFill="#4799cd" style="-fx-background-color: #4799cd;" text="Print Employees" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="527.0" layoutY="252.0" onAction="#onPrintBookings" prefHeight="104.0" prefWidth="243.0" ripplerFill="#4799cd" style="-fx-background-color: #4799cd;" text="Print Bookings" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="341.0" layoutY="252.0" onAction="#onPrintServices" prefHeight="104.0" prefWidth="243.0" ripplerFill="#4799cd" style="-fx-background-color: #4799cd;" text="Print Services" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="341.0" layoutY="402.0" onAction="#onPrintAlocated" prefHeight="104.0" prefWidth="243.0" ripplerFill="#4799cd" style="-fx-background-color: #4799cd;" text="Print Ownership" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="714.0" layoutY="402.0" onAction="#onPrintBookingByDate" prefHeight="104.0" prefWidth="243.0" ripplerFill="#4799cd" style="-fx-background-color: #4799cd;" text="Print Booking By Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

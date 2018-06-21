@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carwashsystem.booking.BookingController2">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1062.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="224.0" layoutY="47.0" text="Booking Management" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" layoutX="902.0" layoutY="14.0" prefHeight="30.0" prefWidth="355.0" spacing="10.0">
+               <children>
+                  <JFXButton onAction="#onMinimize" prefHeight="26.0" prefWidth="22.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/minus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#onClose" prefHeight="27.0" prefWidth="22.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane layoutX="71.0" layoutY="44.0" prefHeight="110.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="93.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/calendar-icon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Pane>
+      <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+      <AnchorPane id="AnchorPane" fx:id="frmBookingManagement" layoutY="144.0" prefHeight="561.0" prefWidth="1271.0" styleClass="screen">
+         <children>
+            <Text layoutX="415.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking Data Management">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnSave" layoutX="111.0" layoutY="386.0" mnemonicParsing="false" onAction="#onSaveRecord" prefHeight="37.0" prefWidth="150.0" text="Save Booking">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEdit" layoutX="268.0" layoutY="386.0" mnemonicParsing="false" onAction="#onUpdateRecord" prefHeight="37.0" prefWidth="150.0" text="Edit Booking">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tblBooking" layoutX="485.0" layoutY="87.0" onMouseClicked="#onSetFields" prefHeight="231.0" prefWidth="742.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn fx:id="colBookingID" prefWidth="119.0" text="BookingID" />
+                  <TableColumn fx:id="colBookingDate" prefWidth="127.0" text="Booking Date" />
+                  <TableColumn fx:id="colTotAmount" prefWidth="75.0" text="Total Amount" />
+                  <TableColumn fx:id="colVehicleRegNo" prefWidth="75.0" text="Vehicle Reg No" />
+                  <TableColumn fx:id="colCustID" prefWidth="75.0" text="CustomerID" />
+                  <TableColumn fx:id="colEmployee" prefWidth="75.0" text="EmployeeID" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Button fx:id="btnDelete" layoutX="111.0" layoutY="435.0" mnemonicParsing="false" onAction="#onDeleteEquipment" prefHeight="37.0" prefWidth="150.0" text="Delete Booking">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCreateNew" layoutX="268.0" layoutY="435.0" mnemonicParsing="false" onAction="#onCreateNewEquipment" prefHeight="37.0" prefWidth="150.0" text="New Booking">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="116.0" layoutY="344.0" text="Booking ID:">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="154.0" text="Customer Name:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="203.0" prefHeight="20.0" prefWidth="200.0" text="Vehicle Registration Number:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="257.0" text="Employee Name:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="103.0" layoutY="303.0" text="Total Amount:">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="111.0" layoutY="97.0" text="Booking Date:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="bookingDate" disable="true" layoutX="215.0" layoutY="89.0" />
+            <JFXComboBox fx:id="cmbCustomer" disable="true" layoutX="218.0" layoutY="148.0" prefHeight="31.0" prefWidth="221.0" />
+            <JFXComboBox fx:id="cmbVeh" disable="true" layoutX="218.0" layoutY="198.0" prefHeight="31.0" prefWidth="221.0" />
+            <JFXComboBox fx:id="cmbEmployee" layoutX="218.0" layoutY="251.0" prefHeight="31.0" prefWidth="221.0" />
+            <JFXTextField fx:id="txtTotalAmount" disable="true" layoutX="215.0" layoutY="293.0" maxWidth="221.0" minWidth="221.0" prefHeight="37.0" prefWidth="221.0" promptText="Total Amount" />
+            <JFXTextField fx:id="txtBookingID" layoutX="215.0" layoutY="334.0" maxWidth="221.0" minWidth="190.0" prefHeight="37.0" prefWidth="221.0" promptText="AutoGenerated" />
+            <JFXTextField fx:id="searchField" layoutX="1036.0" layoutY="47.0" promptText="Search" />
+            <BarChart fx:id="bookingChart" barGap="1.0" categoryGap="2.0" layoutX="485.0" layoutY="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="742.0" title="Bookings">
+               <xAxis>
+                  <CategoryAxis fx:id="pxAxis" side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis fx:id="pyAxis" side="LEFT" />
+               </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

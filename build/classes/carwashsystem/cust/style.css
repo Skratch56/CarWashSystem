@@ -1,0 +1,10 @@
+.head-background
+{
+    -fx-background-color: linear-gradient(to left,#795AF3 ,#3929E0);
+}
+.jfx-snackbar-content{
+    -fx-background-color:#ff0000;
+}
+.jfx-snackbar-toast{
+    -fx-background-color:#ffffff;
+}

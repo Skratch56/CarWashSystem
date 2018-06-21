@@ -1,0 +1,13 @@
+.screen{
+    -fx-background-color: #00675b
+}
+
+.button{
+    -fx-background-color: #00897b;
+      -fx-text-fill: #e1f5fe;
+}
+
+.button:hover{
+    -fx-background-color: #004d40;
+     
+}

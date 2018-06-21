@@ -1,0 +1,8 @@
+
+.minus-button {
+    -fx-background-image: url("images/minus.png");
+}
+
+.close-button {
+    -fx-background-image: url("images/close.png");
+}

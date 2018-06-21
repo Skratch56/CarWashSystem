@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="frmWelcomeScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #819cff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carwashsystem.WelcomeScreenController">
+   <children>
+      <ImageView fitHeight="554.0" fitWidth="819.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Car%20wash%20splash%20screen_1.jpg" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Text fill="WHITE" layoutX="180.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME To Burger Box Car Wash" wrappingWidth="500.328125">
+               <font>
+                  <Font name="Bernard MT Condensed" size="32.0" />
+               </font>
+            </Text>
+            <VBox layoutX="430.0" layoutY="246.0" prefHeight="91.0" prefWidth="169.0">
+               <children>
+                  <HBox alignment="CENTER" />
+                  <HBox alignment="CENTER" />
+                  <HBox alignment="CENTER" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

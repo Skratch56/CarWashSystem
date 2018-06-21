@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="CarWashSystem.jnlp">
+  <information>
+    <title>CarWashSystem</title>
+    <vendor>Joseph</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="CarWashSystem.jar" size="2416234" download="eager" />
+    <jar href="lib\ant-1.7.1.jar" size="1323005" download="eager" />
+    <jar href="lib\antlr-2.7.5.jar" size="435563" download="eager" />
+    <jar href="lib\barbecue-1.5-beta1.jar" size="91079" download="eager" />
+    <jar href="lib\barcode4j-2.1.jar" size="274404" download="eager" />
+    <jar href="lib\batik-anim.jar" size="95479" download="eager" />
+    <jar href="lib\batik-awt-util.jar" size="403287" download="eager" />
+    <jar href="lib\batik-bridge.jar" size="561551" download="eager" />
+    <jar href="lib\batik-css.jar" size="311900" download="eager" />
+    <jar href="lib\batik-dom.jar" size="173750" download="eager" />
+    <jar href="lib\batik-ext.jar" size="10261" download="eager" />
+    <jar href="lib\batik-gvt.jar" size="242948" download="eager" />
+    <jar href="lib\batik-parser.jar" size="73710" download="eager" />
+    <jar href="lib\batik-script.jar" size="61893" download="eager" />
+    <jar href="lib\batik-svg-dom.jar" size="603361" download="eager" />
+    <jar href="lib\batik-svggen.jar" size="215802" download="eager" />
+    <jar href="lib\batik-util.jar" size="128334" download="eager" />
+    <jar href="lib\batik-xml.jar" size="30862" download="eager" />
+    <jar href="lib\bcel-5.2.jar" size="533339" download="eager" />
+    <jar href="lib\bsh-2.0b4.jar" size="281694" download="eager" />
+    <jar href="lib\castor-1.2.jar" size="858832" download="eager" />
+    <jar href="lib\commons-beanutils-1.8.0.jar" size="231320" download="eager" />
+    <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-javaflow-20060411.jar" size="96529" download="eager" />
+    <jar href="lib\commons-logging-1.1.1.jar" size="60841" download="eager" />
+    <jar href="lib\dom4j-1.6.1.jar" size="313898" download="eager" />
+    <jar href="lib\font-awesome-4.7.0.jar" size="680331" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\groovy-all-2.0.1.jar" size="6191960" download="eager" />
+    <jar href="lib\hibernate3.jar" size="1674454" download="eager" />
+    <jar href="lib\hsqldb-1.8.0-10.jar" size="706710" download="eager" />
+    <jar href="lib\iText-2.1.7.js2.jar" size="1130575" download="eager" />
+    <jar href="lib\jackson-annotations-2.1.4.jar" size="34476" download="eager" />
+    <jar href="lib\jackson-core-2.1.4.jar" size="206866" download="eager" />
+    <jar href="lib\jackson-databind-2.1.4.jar" size="926562" download="eager" />
+    <jar href="lib\jasperreports-5.6.0.jar" size="4968538" download="eager" />
+    <jar href="lib\jasperreports-applet-5.6.0.jar" size="549866" download="eager" />
+    <jar href="lib\jasperreports-fonts-5.6.0.jar" size="2478084" download="eager" />
+    <jar href="lib\jasperreports-javaflow-5.6.0.jar" size="5011613" download="eager" />
+    <jar href="lib\jasperreports.jar" size="2008066" download="eager" />
+    <jar href="lib\jaxen-1.1.1.jar" size="226915" download="eager" />
+    <jar href="lib\jcommon-1.0.15.jar" size="309294" download="eager" />
+    <jar href="lib\jdt-compiler-3.1.1.jar" size="1212369" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2386350" download="eager" />
+    <jar href="lib\jfreechart-1.0.12.jar" size="1368681" download="eager" />
+    <jar href="lib\jpa.jar" size="48045" download="eager" />
+    <jar href="lib\jxl-2.6.10.jar" size="743361" download="eager" />
+    <jar href="lib\log4j-1.2.15.jar" size="391834" download="eager" />
+    <jar href="lib\lucene-analyzers-common-4.5.1.jar" size="1586103" download="eager" />
+    <jar href="lib\lucene-core-4.5.1.jar" size="2297477" download="eager" />
+    <jar href="lib\lucene-queryparser-4.5.1.jar" size="384884" download="eager" />
+    <jar href="lib\mondrian-3.1.1.12687.jar" size="2643646" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.42-bin.jar" size="996444" download="eager" />
+    <jar href="lib\olap4j-0.9.7.309-JS-3.jar" size="445343" download="eager" />
+    <jar href="lib\png-encoder-1.5.jar" size="10266" download="eager" />
+    <jar href="lib\poi-3.7-20101029.jar" size="1675036" download="eager" />
+    <jar href="lib\poi-ooxml-3.7-20101029.jar" size="498259" download="eager" />
+    <jar href="lib\poi-ooxml-schemas-3.7-20101029.jar" size="3967696" download="eager" />
+    <jar href="lib\rhino-1.7R3.jar" size="1122370" download="eager" />
+    <jar href="lib\saaj-api-1.3.jar" size="18817" download="eager" />
+    <jar href="lib\serializer.jar" size="278281" download="eager" />
+    <jar href="lib\servlet-api-2.4.jar" size="97693" download="eager" />
+    <jar href="lib\spring-beans-2.5.5.jar" size="486031" download="eager" />
+    <jar href="lib\spring-core-2.5.5.jar" size="287235" download="eager" />
+    <jar href="lib\velocity-1.7-dep.jar" size="806736" download="eager" />
+    <jar href="lib\xalan-2.7.1.jar" size="3176148" download="eager" />
+    <jar href="lib\xercesImpl-2.10.0.jar" size="1363159" download="eager" />
+    <jar href="lib\xml-apis-ext.jar" size="85686" download="eager" />
+    <jar href="lib\xml-apis.jar" size="220536" download="eager" />
+    <jar href="lib\xmlbeans-2.5.0.jar" size="2722970" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CarWashSystem" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="carwashsystem.CarWashSystem"  name="CarWashSystem" />
+  <update check="always"/>
+</jnlp>

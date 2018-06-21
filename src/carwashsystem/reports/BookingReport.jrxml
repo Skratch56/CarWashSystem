@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="f82a85f9-506b-45a2-a2fb-fcf8a1a27186">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="54"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     booking.`booking_no` AS booking_booking_no,
+     booking.`booking_date` AS booking_booking_date,
+     booking.`total_amount` AS booking_total_amount,
+     booking.`vehicle_reg_no` AS booking_vehicle_reg_no,
+     booking.`customer_id` AS booking_customer_id,
+     tblcustomer.`firstname` AS tblcustomer_firstname,
+     tblcustomer.`surname` AS tblcustomer_surname,
+     tblcustomer.`cellphone_number` AS tblcustomer_cellphone_number
+FROM
+     `booking` booking INNER JOIN `tblcustomer` tblcustomer ON booking.`customer_id` = tblcustomer.`customer_id`
+     INNER JOIN `vehicle` vehicle ON booking.`vehicle_reg_no` = vehicle.`vehicle_reg_no`]]>
+	</queryString>
+	<field name="booking_booking_no" class="java.lang.Integer"/>
+	<field name="booking_booking_date" class="java.lang.String"/>
+	<field name="booking_total_amount" class="java.lang.String"/>
+	<field name="booking_vehicle_reg_no" class="java.lang.String"/>
+	<field name="booking_customer_id" class="java.lang.Integer"/>
+	<field name="tblcustomer_firstname" class="java.lang.String"/>
+	<field name="tblcustomer_surname" class="java.lang.String"/>
+	<field name="tblcustomer_cellphone_number" class="java.lang.String"/>
+	<group name="booking_booking_no">
+		<groupExpression><![CDATA[$F{booking_booking_no}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="143" y="13" width="657" height="24" forecolor="#000000" uuid="61a97d67-903c-4702-bf19-ab52b14e4149"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{booking_booking_no}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="97" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="0b6fdb54-8b9f-488f-b3cd-375690f9c65d"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="30">
+				<frame>
+					<reportElement mode="Opaque" x="652" y="0" width="150" height="30" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="eb69f3a6-9612-4e1e-a08b-cb3b1af63705"/>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="575" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="234" width="20" height="241" backcolor="#000000" uuid="d4c60808-2602-46eb-ba1b-3fbed4daa629"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666" uuid="a931a896-bcf5-43ee-ba31-965c4efe1932"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="754e78ab-9a38-44f2-9952-d467bfbc81d1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="647fac2d-9ca3-4295-9a8c-ae6ca235755d"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF" uuid="23b62786-c1db-47c3-87a3-0f758c54f687"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="5b9d47f1-3206-4402-b015-3707ef920879"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Booking Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666" uuid="47cb1743-48d4-40b8-b3bf-2674c3429623"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="100" height="15" uuid="b64460b5-202c-435b-8fe7-8655b42b0475"/>
+					<text><![CDATA[Booking_Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="100" y="0" width="100" height="15" uuid="09a7f032-446e-4dcf-8a1c-1abdb30ef6e0"/>
+					<text><![CDATA[Total_Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="200" y="0" width="100" height="15" uuid="6cea5314-cf68-4a10-bdef-9d67880cf278"/>
+					<text><![CDATA[Vehicle_Reg_No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="300" y="0" width="100" height="15" uuid="e89c7ef9-b404-4343-9c31-d4e6ac24211a"/>
+					<text><![CDATA[Customer_ID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="400" y="0" width="100" height="15" uuid="45d0d728-ff03-4ee7-a557-caa860ae95e9"/>
+					<text><![CDATA[Firstname]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="500" y="0" width="100" height="15" uuid="fa45c44b-8d59-4508-a386-7fb59a34dfe9"/>
+					<text><![CDATA[Surname]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="600" y="0" width="100" height="15" uuid="400b4183-443c-41f6-b164-e32bd2dfce98"/>
+					<text><![CDATA[Cellphone_Number]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="97" y="1" width="705" height="15" uuid="00f0f07c-4740-4347-b558-c79540a34e12"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="100" height="15" uuid="abcccaad-0646-4d92-9e9d-1e2dde0c5c5e"/>
+					<textFieldExpression><![CDATA[$F{booking_booking_date}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="100" y="0" width="100" height="15" uuid="e5629797-2e7e-4931-adcc-ad1a09def2a8"/>
+					<textFieldExpression><![CDATA[$F{booking_total_amount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="200" y="0" width="100" height="15" uuid="c159cccf-21e2-45e3-9efa-e17ff9ec8f51"/>
+					<textFieldExpression><![CDATA[$F{booking_vehicle_reg_no}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="300" y="0" width="100" height="15" uuid="e3a1946f-762d-456a-9b07-603e68582b39"/>
+					<textFieldExpression><![CDATA[$F{booking_customer_id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="400" y="0" width="100" height="15" uuid="a2ad8f9c-2d04-413f-be59-ce07dae38f4e"/>
+					<textFieldExpression><![CDATA[$F{tblcustomer_firstname}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="500" y="0" width="100" height="15" uuid="4dc685d0-e401-4d21-bb1d-b7577609569b"/>
+					<textFieldExpression><![CDATA[$F{tblcustomer_surname}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="600" y="0" width="100" height="15" uuid="6d445bfb-c6f0-4dfc-80a2-969c7c0fcaf4"/>
+					<textFieldExpression><![CDATA[$F{tblcustomer_cellphone_number}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1" uuid="b423e8f1-4c7d-4a38-a8b2-91360c0374e2"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="82afcb96-696f-4770-bf56-9d0b2869fa5c"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20" uuid="929dce3a-f2d8-4be2-ab93-341e30c9f4a3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

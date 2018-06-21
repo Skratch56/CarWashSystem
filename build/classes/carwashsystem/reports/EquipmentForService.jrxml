@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8f6eb122-52a0-486c-bd9d-3474bbe841ae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     equipment.`equipment_id` AS EquipmentID,
+     equipment.`equip_description` AS EquipDescription,
+     equipment.`equipment_type` AS EquipmentType,
+     service.`Service_Code` AS ServiceCode,
+     service.`Service_Type` AS ServiceType,
+     service.`Service_Cost` AS ServiceCost,
+     allocation.`Description` AS allocation_Description
+FROM
+     `allocation` allocation INNER JOIN `equipment` equipment ON allocation.`Equipment_ID` = equipment.`equipment_id`
+     INNER JOIN `service` service ON allocation.`Service_Code` = service.`Service_Code`]]>
+	</queryString>
+	<field name="EquipmentID" class="java.lang.Integer"/>
+	<field name="EquipDescription" class="java.lang.String"/>
+	<field name="EquipmentType" class="java.lang.String"/>
+	<field name="ServiceCode" class="java.lang.Integer"/>
+	<field name="ServiceType" class="java.lang.String"/>
+	<field name="ServiceCost" class="java.math.BigDecimal"/>
+	<field name="allocation_Description" class="java.lang.String"/>
+	<group name="allocation_Description">
+		<groupExpression><![CDATA[$F{allocation_Description}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#B89F7D" backcolor="#F2EBDF" uuid="7232e35f-86bb-43ab-afb3-458adccb4b3a"/>
+					<rectangle>
+						<reportElement mode="Opaque" x="21" y="0" width="36" height="24" backcolor="#736343" uuid="a8476958-b6b4-4e8c-880b-27c789fe7f88"/>
+						<graphicElement>
+							<pen lineWidth="0.0"/>
+						</graphicElement>
+					</rectangle>
+					<textField>
+						<reportElement style="SubTitle" x="68" y="0" width="755" height="24" forecolor="#736343" uuid="3dc5afd7-2ca8-429a-ba01-0843b8a6fe02"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{allocation_Description}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="198" y="0" width="396" height="62" uuid="450d3ede-3765-4d46-beac-199d41f0b236"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Allocation Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="5893a836-1066-4a89-94f6-52050604f20a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="133" height="15" forecolor="#736343" uuid="29dd5763-ad67-401c-b3af-f7d8afb05393"/>
+				<text><![CDATA[EquipmentID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="133" y="0" width="133" height="15" forecolor="#736343" uuid="8b0fd3bd-fb78-4993-af9b-b370738bb227"/>
+				<text><![CDATA[EquipDescription]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="266" y="0" width="133" height="15" forecolor="#736343" uuid="b987a811-70bc-41ad-8322-935dcfc92996"/>
+				<text><![CDATA[EquipmentType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="399" y="0" width="133" height="15" forecolor="#736343" uuid="ea2a0aec-cdc9-4f03-a384-80633b031129"/>
+				<text><![CDATA[ServiceCode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="532" y="0" width="133" height="15" forecolor="#736343" uuid="d7608283-440f-42aa-8a0b-4b28644f9713"/>
+				<text><![CDATA[ServiceType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="665" y="0" width="133" height="15" forecolor="#736343" uuid="4dd27ba4-2b98-433b-9054-e374f0c9a042"/>
+				<text><![CDATA[ServiceCost]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="ae85a3dd-e040-4942-8962-39fb4530caa1"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="133" height="15" uuid="8661c2c2-abd3-471b-aaf5-3f67147a1b58"/>
+					<textFieldExpression><![CDATA[$F{EquipmentID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="133" y="0" width="133" height="15" uuid="05223254-1c4c-468e-91a5-8597fbded697"/>
+					<textFieldExpression><![CDATA[$F{EquipDescription}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="266" y="0" width="133" height="15" uuid="05d37947-ebc7-41ab-9821-a3db0fed1ea5"/>
+					<textFieldExpression><![CDATA[$F{EquipmentType}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="399" y="0" width="133" height="15" uuid="d164cd81-28bf-4f3b-8cbc-05ea79296366"/>
+					<textFieldExpression><![CDATA[$F{ServiceCode}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="532" y="0" width="133" height="15" uuid="e8f0c030-235f-4e5a-8a15-446bcf30904a"/>
+					<textFieldExpression><![CDATA[$F{ServiceType}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="665" y="0" width="133" height="15" uuid="2afbcbc6-7ee3-4391-a4dc-16755a9b269c"/>
+					<textFieldExpression><![CDATA[$F{ServiceCost}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="a9c4c414-f283-4877-b8fe-0ed9a8cc0cb7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="4acb8b8f-8afb-436e-8283-43001c10af89"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="00800c97-72ae-435a-878e-3a4b343be52e"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="116c96f5-6353-4ef2-a108-8e00f5acd6b6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="d820c5d4-86a1-4639-897c-e1309a67cefc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
